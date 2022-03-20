@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Listagem de pedido
+{%endblock title%}
+
+{%block content %}
+<div class="card">
+    <div class="card-header">Dados do pedido</div>
+    <div class="card-body">
+        <h5 class="card-infos">Cliente: {{pedido.cliente}}</h5>
+
+        <h5 class="card-infos">Data do pedido: {{pedido.data_pedido}}</h5>
+
+        <h5 class="card-infos">Valor: {{pedido.valor}}</h5>
+        <h5 class="card-infos">Status: {{pedido.status}}</h5>
+
+        <h5 class="card-infos">Observação: {{pedido.observacoes}}</h5>
+        <hr>
+
+        <h4>Produtos do pedido</h4>
+        {% for i in pedido.produtos.all %}
+         <h5 class="card-infos">{{i.nome}}</h5>
+        {% endfor %}
+       
+    </div>
+    
+</div>
+
+{%endblock content %}

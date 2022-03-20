@@ -1,0 +1,43 @@
+{% extends 'base.html'%} 
+{%load meus_filtros %} 
+{% block title%}
+    Cadastro de pedidos 
+{%endblock title%} 
+
+{%block content %}
+<form method="POST">
+  {% csrf_token %}
+    <h4>Cadastro de pedidos</h4>
+    <hr>
+    <div class="form-group">
+        {{form_pedido.cliente.errors}}
+        <label>Cliente: {{form_pedido.cliente|addclass:'form-control'}} </label>
+    </div>
+
+    <div class="form-group">
+        {{form.produtos.errors}}
+        <label>Produtos: {{form_pedido.produtos|addclass:'form-control'}}</label>
+    </div>
+    <div class="form-group">
+        {{form.data_pedido.errors}}
+        <label>Data do pedido: {{form_pedido.data_pedido|addclass:'form-control'}}</label>
+    </div>
+    <div class="form-group">
+        {{form_pedido.valor.errors}}
+        <label>Valor: {{form_pedido.valor|addclass:'form-control'}}</label>
+    </div>
+    <div class="form-group">
+        {{form_pedido.status.errors}}
+        <label>Status: {{form_pedido.status|addclass:'form-control'}}</label>
+    </div>
+    <div class="form-group">
+        {{form_pedido.observacoes.errors}}
+        <label>Observações: {{form_pedido.observacoes|addclass:'form-control'}}</label>
+    </div>
+
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" name="cadastrar" />
+    </div>
+
+</form>
+{%endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'adminlte/base.html' %}
+
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title%} {% endblock title%}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{% static "clientes/css/style.css" %}"/>
+  </head>   
+
+  <body>
+    <div class="container">{% block content %} {% endblock content%}</div>
+  </body>
+</html>
